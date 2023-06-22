@@ -20,15 +20,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (BuildContext context, Orientation orientation,
-              DeviceType deviceType) =>
-          MaterialApp(
+    return Sizer(builder:
+        (BuildContext context, Orientation orientation, DeviceType deviceType) {
+      return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: AppTheme.lightThemeData,
         home: const HomePage(),
-      ),
-    );
+      );
+    });
   }
 }
