@@ -46,10 +46,10 @@ class StocksActivityCard extends StatelessWidget {
                   4.sh,
                   Text(
                     'Nvidia',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall!
-                        .copyWith(fontWeight: FontWeight.w500),
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.greyColor.withOpacity(.5),
+                        ),
                   ),
                 ],
               ),
@@ -96,6 +96,7 @@ class StocksActivityCard extends StatelessWidget {
                 '10 shares',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w500,
+                      color: AppColors.greyColor.withOpacity(.5),
                     ),
               ),
             ],

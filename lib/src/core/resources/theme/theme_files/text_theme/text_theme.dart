@@ -4,7 +4,8 @@ import 'package:stock_ui/src/core/resources/theme/colors/colors.dart';
 const TextTheme textTheme = TextTheme(
   titleMedium: TextStyle(
     // color: GlobalsStyles.bluelColor,
-    fontSize: 20,
+    fontSize: 18, color: AppColors.darkBlue,
+
     fontWeight: FontWeight.w600,
   ),
   labelLarge: TextStyle(

@@ -1,57 +1,82 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_ui/constants/assets.dart';
-import 'package:stock_ui/src/common_widget/buttons/icon_button.dart';
 import 'package:stock_ui/src/core/resources/theme/colors/colors.dart';
-import 'package:stock_ui/src/core/resources/theme/colors/styles.dart';
-import 'package:stock_ui/src/core/utils/extinsions/sized_box_extinsion.dart';
-import 'package:stock_ui/src/feature/home/ui/widgets/header_card.dart';
-import 'package:stock_ui/src/feature/home/ui/widgets/stocks_activity/card.dart';
-import 'package:stock_ui/src/feature/home/ui/widgets/watch_list_widgets/vertical_watchlist.dart';
-import 'package:stock_ui/src/feature/home/ui/widgets/watch_list_widgets/watchlist_header.dart';
+import 'package:stock_ui/src/feature/home/ui/view/pages/home.dart';
+import 'package:stock_ui/src/feature/home/ui/view/pages/markets_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int selectedPage = 0;
+  _changeTab(int index) {
+    setState(() {
+      selectedPage = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        automaticallyImplyLeading: true,
-        excludeHeaderSemantics: true,
-        leading: const CustomeIconButton(
-          onPressed: null,
-          path: Assets.assetsImagesLogo,
-          height: 30,
-        ),
-        title: const Text('Alex Julia'),
-        actions: [
-          CustomeIconButton(onPressed: () {}, path: Assets.assetsImagesSearch),
-          CustomeIconButton(onPressed: () {}, path: Assets.assetsImagesBell),
+      body: pages[selectedPage],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        currentIndex: selectedPage,
+        onTap: (index) => _changeTab(index),
+        selectedItemColor: AppColors.darkBlue,
+        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon: Image.asset(
+                selectedPage == 0
+                    ? Assets.assetsImagesHome
+                    : Assets.assetsImagesHomeOutline,
+                height: 25,
+              ),
+              label: "Home"),
+          const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.archivebox), label: "About"),
+          const BottomNavigationBarItem(
+              icon: Align(
+                alignment: Alignment.bottomCenter,
+                child: CircleAvatar(
+                    backgroundColor: AppColors.lightGreen,
+                    radius: 22,
+                    child: Icon(
+                      Icons.compare_arrows_sharp,
+                      color: Colors.white,
+                    )),
+              ),
+              label: "Product"),
+          const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.settings_solid), label: "Contact"),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined), label: "Settings"),
         ],
-      ),
-      body: SingleChildScrollView(
-        padding: AppStyles.gloablPagePadding,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const HeaderCard(),
-            32.sh,
-            const WatchListHeader(),
-            16.sh,
-            const VerticalWatchList(),
-            16.sh,
-            Text(
-              'Stocks Acivity',
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: AppColors.darkBlue,
-                    fontWeight: FontWeight.w800,
-                  ),
-            ),
-            const StocksActivityCard(),
-          ],
-        ),
       ),
     );
   }
 }
+
+final List<Widget> pages = [
+  const HomePageBody(),
+  const Center(
+    child: Text('page2'),
+  ),
+  const Center(
+    child: Text('page3'),
+  ),
+  const MarketsPage(),
+  const Center(
+    child: Text('page5'),
+  ),
+];

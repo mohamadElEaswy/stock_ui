@@ -53,6 +53,14 @@ class Assets {
   /// assets/images/bell.png
   static const String assetsImagesBell = "assets/images/bell.png";
 
+  /// Assets for assetsImagesHome
+  /// assets/images/home.png
+  static const String assetsImagesHome = "assets/images/home.png";
+
+  /// Assets for assetsImagesHomeOutline
+  /// assets/images/home_outline.png
+  static const String assetsImagesHomeOutline = "assets/images/home_outline.png";
+
   /// Assets for assetsImagesLogo
   /// assets/images/logo.png
   static const String assetsImagesLogo = "assets/images/logo.png";
