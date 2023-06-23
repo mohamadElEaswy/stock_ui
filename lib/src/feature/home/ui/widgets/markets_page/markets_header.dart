@@ -10,7 +10,7 @@ class VerticalMarketsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 20.h,
+      height: 23.h,
       child: ListView.separated(
         itemCount: 4,
         physics: AppStyles.globalScrollPhysics,

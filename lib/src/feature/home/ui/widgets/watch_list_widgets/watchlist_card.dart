@@ -12,47 +12,52 @@ class VerticalItemBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.globalGreyColor),
         // color: AppColors.darkBlue,
       ),
-      height: 34.h,
+      height: 37.h,
       width: 67.2.w,
       child: Flex(
         direction: Axis.vertical,
         children: [
           Flexible(
-            flex: 3,
+            flex: 1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CircleAvatar(
-                  backgroundColor: AppColors.globalGreyColor,
-                  child: Icon(
-                    Icons.paypal,
-                    color: AppColors.darkBlue,
+                Center(
+                  child: CircleAvatar(
+                    backgroundColor: AppColors.globalGreyColor,
+                    radius: 20.sp,
+                    child: const Icon(
+                      Icons.paypal,
+                      color: AppColors.darkBlue,
+                    ),
                   ),
                 ),
                 8.sw,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       'ADB',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(fontWeight: FontWeight.w700),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10.sp,
+                          ),
                     ),
                     Text(
                       'Adobe Inc',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontWeight: FontWeight.w500),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 7.sp,
+                          ),
                     ),
                   ],
                 ),
@@ -60,21 +65,22 @@ class VerticalItemBuilder extends StatelessWidget {
                 Icon(
                   CupertinoIcons.arrow_up,
                   color: AppColors.lightGreen,
-                  size: 12.sp,
+                  size: 11.sp,
                 ),
                 Text(
                   '5.49%',
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: AppColors.lightGreen,
                         fontWeight: FontWeight.w800,
+                        fontSize: 8.sp,
                       ),
                 ),
               ],
             ),
           ),
-          32.sh,
+          16.sh,
           Flexible(
-            flex: 5,
+            flex: 2,
             child: Row(
               children: [
                 Column(
@@ -86,12 +92,14 @@ class VerticalItemBuilder extends StatelessWidget {
                           Theme.of(context).textTheme.headlineSmall!.copyWith(
                                 color: AppColors.darkBlue,
                                 fontWeight: FontWeight.w800,
+                                fontSize: 14.sp,
                               ),
                     ),
                     Text(
                       '\$643.58',
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.w500,
+                            fontSize: 8.sp,
                           ),
                     ),
                   ],

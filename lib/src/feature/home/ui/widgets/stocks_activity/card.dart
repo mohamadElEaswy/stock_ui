@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:stock_ui/src/core/resources/theme/colors/colors.dart';
-import 'package:stock_ui/src/core/resources/theme/colors/styles.dart';
 import 'package:stock_ui/src/core/utils/extinsions/sized_box_extinsion.dart';
 
 class StocksActivityCard extends StatelessWidget {
@@ -12,18 +11,20 @@ class StocksActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // margin: const EdgeInsets.all(8),
-      padding: AppStyles.gloablPagePadding,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.globalGreyColor),
         // color: AppColors.darkBlue,
       ),
-      height: 11.h,
+      height: 13.h,
       width: 100.w,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const CircleAvatar(
                 backgroundColor: AppColors.globalGreyColor,
@@ -62,8 +63,10 @@ class StocksActivityCard extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: AppColors.lightGreen,
                       fontWeight: FontWeight.w800,
+                      fontSize: 12.sp,
                     ),
               ),
+              2.sh,
               Row(
                 children: [
                   Icon(
@@ -76,6 +79,7 @@ class StocksActivityCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodySmall!.copyWith(
                           color: AppColors.lightGreen,
                           fontWeight: FontWeight.w600,
+                          fontSize: 8.sp,
                         ),
                   ),
                 ],
@@ -88,14 +92,17 @@ class StocksActivityCard extends StatelessWidget {
               Text(
                 '\$227.26',
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: AppColors.darkBlue,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 16),
+                      color: AppColors.darkBlue,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 12.sp,
+                    ),
               ),
+              2.sh,
               Text(
                 '10 shares',
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       fontWeight: FontWeight.w500,
+                      fontSize: 8.sp,
                       color: AppColors.greyColor.withOpacity(.5),
                     ),
               ),

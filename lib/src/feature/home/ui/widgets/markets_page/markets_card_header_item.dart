@@ -48,12 +48,16 @@ class VerticalMarketItemBuilder extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         fontWeight: FontWeight.w500,
                         color: AppColors.greyColor.withOpacity(.5),
+                        fontSize: 8.sp,
                       ),
                 ),
                 Text(
                   '\$35,819.56',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontWeight: FontWeight.w700, color: AppColors.darkBlue),
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.darkBlue,
+                      ),
                 ),
                 Row(
                   children: [
@@ -67,6 +71,7 @@ class VerticalMarketItemBuilder extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: AppColors.lightGreen,
                             fontWeight: FontWeight.w800,
+                            fontSize: 8.sp,
                           ),
                     ),
                   ],
